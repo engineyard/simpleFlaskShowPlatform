@@ -4,7 +4,10 @@ app = Flask(__name__)
 
 
 def renderArchitecture():
-    return(str(platform.platform()))
+    pf = str(platform.platform())
+    uname = str(platform.uname())
+    xs = f"{pf}<p>{uname}"
+    return(xs)
 
 @app.route("/")
 def hello_world():
